@@ -3,6 +3,7 @@ from flask_bootstrap import Bootstrap
 from searchbyplayer import search
 from nba_api.stats.static import players
 from nba_api.stats.endpoints import playercareerstats as psc
+import pandas
 
 
 session = dict()
@@ -29,8 +30,10 @@ def result():
     res = session.get("var")
     print(type(res))
     player_dict = players.find_players_by_full_name(res)
-    career = psc.PlayerCareerStats(player_id=player_dict[0]['id'])
-    return render_template('results.html', names=res)
+    career = psc.PlayerCareerStats(player_id=player_dict[0]['id']).get_data_frames()[0]
+    career = pandas.DataFrame(career)
+
+    return render_template('results.html', names=res, tables=[career.to_html(classes='data')], titles=career.columns.values)
 
 if __name__ == "__main__":
     app.run(debug=True)

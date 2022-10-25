@@ -30,14 +30,45 @@
 {% block body %}
 <br><br><br>
 <div class="row">
-    
-    <div class="col-3">
-    </div>
+        <div class="col-1"></div>
         <div class="col-6">
         {% for table in tables %}
-            {{titles[loop.index]}}
             {{ table|safe }}
         {% endfor %}  
+        <!-- <table id="data" class="table table-striped">
+          <thead>
+            <th>Player_ID</th>
+            <th>Season_ID</th>
+            <th>League_ID</th>
+            <th>Team_ID</th>
+            <th>Team_Abbreviation</th>
+            <th>Player_Age</th>
+            <th>GP</th>
+            <th>GS</th>
+            <th>Min</th>
+            <th>FGM</th>
+            <th>FGA</th>
+            <th>FG_PCT</th>
+            <th>FG3M</th>
+            <th>FG3A</th>
+            <th>FG3_PCT</th>
+            <th>FTM</th>
+            <th>FTA</th>
+            <th>FT_PCT</th>
+            <th>OREB</th>
+            <th>DREB</th>
+            <th>REB</th>
+            <th>AST</th>
+            <th>STL</th>
+            <th>BLK</th>
+            <th>TOV</th>
+            <th>PF</th>
+            <th>PTS</th>
+          </thead>
+          <tbody>
+            
+          </tbody>
+        </table> -->
         </div>
 </div>
 {% endblock%}

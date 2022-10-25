@@ -32,8 +32,10 @@ def result():
     player_dict = players.find_players_by_full_name(res)
     career = psc.PlayerCareerStats(player_id=player_dict[0]['id']).get_data_frames()[0]
     career = pandas.DataFrame(career)
-
-    return render_template('results.html', names=res, tables=[career.to_html(classes='data')], titles=career.columns.values)
+    career.pop("PLAYER_ID")
+    career.pop("TEAM_ID")
+    career.pop("LEAGUE_ID")
+    return render_template('results.html', names=res, tables=[career.to_html(classes='table table-striped table-hover')], titles=career.columns.values)
 
 if __name__ == "__main__":
     app.run(debug=True)

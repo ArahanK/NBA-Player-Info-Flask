@@ -35,6 +35,14 @@ def result():
     career.pop("PLAYER_ID")
     career.pop("TEAM_ID")
     career.pop("LEAGUE_ID")
+    career.columns=['Season', 'Team', 'Age', 'GP', 'GS', 'Min', 'FGM', 'FGA', 'FG_PCT', 'FG3M', 'FG3A', 'FG3_PCT', 'FTM', 'FTA',
+       'FT_PCT', 'OREB', 'DREB', 'REB', 'AST', 'STL', 'BLK', 'TOV', 'PF','PTS']
+    ppg = []
+    for i in range(len(career['PTS'])):
+        ppg+=[round(career['PTS'][i]/career['GP'][i], 2)]
+    
+    career['PPG']=ppg
+    
     return render_template('results.html', names=res, tables=[career.to_html(classes='table table-striped table-hover')], titles=career.columns.values)
 
 if __name__ == "__main__":

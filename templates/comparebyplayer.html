@@ -34,36 +34,8 @@
     <div class="col-3">
     </div>
         <div class="col-6">
-          <form  method="POST" action="{{ url_for('searchbyplayer') }}">
-            {{ Search.csrf_token }}
-            {{ Search.name }}
-            <br>
-            <br>
-            {{ Search.fgmfan }}
-            <br>
-            <br>
-            {{ Search.fgafan }}
-            <br>
-            <br>
-            {{ Search.tovfan }}
-            <br><br>
-            {{ Search.rebfan }}
-            <br><br>
-            {{ Search.astfan }}
-            <br><br>
-            {{ Search.pointsfan }}
-            <br><br>
-            {{ Search.stlsfan }}
-            <br><br>
-            {{ Search.blkfan }}
-            <br><br>
-            {{ Search.submit }}
-            <br>
-            <!-- fgafan = StringField("Enter points per FGM", validators=[DataRequired()])
-    fgmfan = StringField("Enter points deducted per FGA", validators=[DataRequired()])
-    tovfan = StringField("Enter points deducted per TOV")
-    rebfan = StringField("Enter points per Rebound")
-    astfan -->
+          <form  method="POST" action="{{ url_for('comparebyplayer') }}">
+          
           </form>
         </div>
 </div>

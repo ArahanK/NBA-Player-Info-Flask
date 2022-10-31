@@ -1,11 +1,13 @@
 from logging import PlaceHolder
+from wsgiref import validate
 from flask_wtf import FlaskForm
 from wtforms import StringField, SubmitField
 from wtforms.validators import DataRequired
 from flask_bootstrap import Bootstrap
 
-class search(FlaskForm):
-    name = StringField("Enter Name", validators=[DataRequired()], render_kw={"placeholder": "Enter player name"})
+class compare(FlaskForm):
+    name1 = StringField("Enter Name of 1st Player", validators=[DataRequired()], render_kw={"placeholder": "Enter player name"})
+    name2 = StringField(render_kw={"placeholder" : "Enter name of 2nd Player"}, validators=[DataRequired()])
     fgmfan = StringField("Enter points per FGM", validators=[DataRequired()], render_kw={"placeholder": "Enter Points per FGM"})
     fgafan = StringField("Enter points deducted per FGA", validators=[DataRequired()], render_kw={"placeholder": "Enter Points Deducted per FGA"})
     tovfan = StringField("Enter points deducted per TOV", render_kw={"placeholder": "Enter points deducted per TOV"})

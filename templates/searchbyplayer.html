@@ -36,28 +36,28 @@
         <div class="col-6">
           <form  method="POST" action="{{ url_for('searchbyplayer') }}">
             {{ Search.csrf_token }}
-            {{ Search.name }}
+            {{ Search.name(class="form-control", size=32) }}
             <br>
             <br>
-            {{ Search.fgmfan }}
+            {{ Search.fgmfan(class="form-control", size=32) }}
             <br>
             <br>
-            {{ Search.fgafan }}
+            {{ Search.fgafan(class="form-control", size=32) }}
             <br>
             <br>
-            {{ Search.tovfan }}
+            {{ Search.tovfan(class="form-control", size=32) }}
             <br><br>
-            {{ Search.rebfan }}
+            {{ Search.rebfan(class="form-control", size=32) }}
             <br><br>
-            {{ Search.astfan }}
+            {{ Search.astfan(class="form-control", size=32) }}
             <br><br>
-            {{ Search.pointsfan }}
+            {{ Search.pointsfan(class="form-control", size=32) }}
             <br><br>
-            {{ Search.stlsfan }}
+            {{ Search.stlsfan(class="form-control", size=32) }}
             <br><br>
-            {{ Search.blkfan }}
+            {{ Search.blkfan(class="form-control", size=32) }}
             <br><br>
-            {{ Search.submit }}
+            {{ Search.submit(class="btn btn-primary", size=32) }}
             <br>
             <!-- fgafan = StringField("Enter points per FGM", validators=[DataRequired()])
     fgmfan = StringField("Enter points deducted per FGA", validators=[DataRequired()])

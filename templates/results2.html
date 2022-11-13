@@ -1,0 +1,91 @@
+{% extends 'base.html' %}
+
+
+{% block head %}
+
+{% endblock %}
+
+{% block navbar%} 
+<nav class="navbar navbar-expand-lg sticky-top navbar-light" style="background-color: #169fb1;">
+    <a class="navbar-brand" href="#">NBA Visualizer</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+      <ul class="navbar-nav">
+        <li class="nav-item ">
+          <a class="nav-link" href="index.html">Home</a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" href="searchbyplayer.html">Search By Player<span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" href="">Compare Players<span class="sr-only">(current)</span></a></a>
+        </li>
+      </ul>  
+    </div> 
+  </nav>
+{% endblock %}
+
+{% block body %}
+<script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.4/dist/Chart.min.js"></script>
+<br><br><br>
+<div class="row">
+        <div class="col-6">
+            <center><img src={{link1}} alt=""></center>
+            <br>
+            <br>
+            <h3 class = "center-this">{{name1}}</h3>
+            <br><br>
+            <center><h3><i><b>Points</b></i></h3></center>
+            <center><h3>{{  points1 }}</h3></center>
+            <br><br>
+            <center><h3><i><b>Assists</b></i></h3></center>
+            <center><h3>{{ ast1 }}</h3></center>
+            <br><br>
+            <center><h3><i><b>Rebounds</b></i></h3></center>
+            <center><h3>{{ reb1 }}</h3></center>
+            <br><br>
+            <center><h3><i><b>Turnovers</b></i></h3></center>
+            <center><h3>{{ tov1 }}</h3></center>
+            <br><br>
+            <center><h3><i><b>Blocks</b></i></h3></center>
+            <center><h3>{{ blk1 }}</h3></center>
+            <br><br>
+            <center><h3><i><b>Steals</b></i></h3></center>
+            <center><h3>{{ stl1 }}</h3></center>
+            <br><br>
+
+        </div>
+        <div class="col-6">
+            <center><img src={{link2}} alt=""></center>
+            <br>
+            <br>
+            <h3 class = "center-this">{{name2}}</h3>
+            <br>
+            <br>
+            <center><h3><i><b>Points</b></i></h3></center>
+            <center><h3>{{  points2 }}</h3></center>
+            <br><br>
+            <center><h3><i><b>Assists</b></i></h3></center>
+            <center><h3>{{ ast2 }}</h3></center>
+            <br><br>
+            <center><h3><i><b>Rebounds</b></i></h3></center>
+            <center><h3>{{ reb2 }}</h3></center>
+            <br><br>
+            <center><h3><i><b>Turnovers</b></i></h3></center>
+            <center><h3>{{ tov2 }}</h3></center>
+            <br><br>
+            <center><h3><i><b>Blocks</b></i></h3></center>
+            <center><h3>{{ blk2 }}</h3></center>
+            <br><br>
+            <center><h3><i><b>Steals</b></i></h3></center>
+            <center><h3>{{ stl2 }}</h3></center>
+            <br><br>
+
+        </div>
+</div>
+<div>
+  {{ plot_div|safe }}
+</div>
+{% endblock%}

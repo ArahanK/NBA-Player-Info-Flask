@@ -16,11 +16,11 @@
         <li class="nav-item ">
           <a class="nav-link" href="index.html">Home</a>
         </li>
-        <li class="nav-item active">
-          <a class="nav-link" href="#">Search By Player<span class="sr-only">(current)</span></a>
-        </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Compare Players</a>
+          <a class="nav-link" href="searchbyplayer.html">Search By Player</a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" href="#">Compare Players<span class="sr-only">(current)</span></a>
         </li>
       </ul>
     </div> 
@@ -35,7 +35,15 @@
     </div>
         <div class="col-6">
           <form  method="POST" action="{{ url_for('comparebyplayer') }}">
-          
+            {{ Search.csrf_token }}
+            <div class="form-group">
+              <!-- {{ Search.name1 }} -->
+              {{ Search.name1(class="form-control", size=32)}}
+              <br><br>
+              {{ Search.name2(class="form-control", size=32) }}
+              <br>
+              {{ Search.submit(class="btn btn-primary", size=15) }}
+            </div>
           </form>
         </div>
 </div>
